@@ -18,16 +18,69 @@ x = [ '1960', '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968',
 #plt.show()
 
 
-#print(pd.unique(df['Indicator Name']))
+#print(len(pd.unique(df['Indicator Name'])))
 #print('\n\n\n\n')
-#print(pd.unique(df['Country Name']))
+#print(len(pd.unique(df['Country Name'])))
 
 life_expec = df['Indicator Name'] == 'Life expectancy at birth, total (years)'
-print(df[life_expec])
+#print(life_expec)
 
-fig, ax = plt.subplots()
+
+mask_std = (df['Indicator Name'] == 'Life expectancy at birth, total (years)') & (df['Country Name'].isin(['Cambodia', 'Maldives', 'Timor-Leste']))
+mask_mean_high = (df['Indicator Name'] == 'Life expectancy at birth, total (years)') & (df['Country Name'].isin(['San Marino', 'Liechtenstein', 'Faroe Islands']))
+mask_mean_low = (df['Indicator Name'] == 'Life expectancy at birth, total (years)') & (df['Country Name'].isin(['Sierra Leone', 'Angola', 'South Sudan']))
+mask_range = (df['Indicator Name'] == 'Life expectancy at birth, total (years)') & (df['Country Name'].isin(['Maldives', 'Bhutan', 'Timor-Leste']))
+
+
+fig, ax = plt.subplots(figsize=(12, 5))
 for row in df[life_expec].index:
     ax.plot(x, df.iloc[row, 4:])
+ax.set_title("All countries") 
+ax.set_xlabel("Year")
+ax.set_ylabel("Life Expectancy")
+plt.xticks(rotation=90)
 
-#ax.scatter(x, df.iloc[9, 4:])
+
+fig, ax = plt.subplots(figsize=(12, 5))
+for row in df[mask_std].index:
+    ax.plot(x, df.iloc[row, 4:], label=df.iloc[row,0])
+ax.set_title("Highest Standard Deviation Life Expectancy") 
+ax.set_xlabel("Year")
+ax.set_ylabel("Life Expectancy")
+ax.legend()
+plt.xticks(rotation=90)
+
+fig, ax = plt.subplots(figsize=(12, 5))
+for row in df[mask_mean_high].index:
+    ax.plot(x, df.iloc[row, 4:], label=df.iloc[row,0])
+ax.set_title("Highest Mean Life Expectancy") 
+ax.set_xlabel("Year")
+ax.set_ylabel("Life Expectancy")
+ax.legend()
+plt.xticks(rotation=90)
+
+fig, ax = plt.subplots(figsize=(12, 5))
+for row in df[mask_mean_low].index:
+    ax.plot(x, df.iloc[row, 4:], label=df.iloc[row,0])
+ax.legend()
+ax.set_title("Lowest Mean Life Expectancy") 
+ax.set_xlabel("Year")
+ax.set_ylabel("Life Expectancy")
+plt.xticks(rotation=90)
+
+fig, ax = plt.subplots(figsize=(12, 5))
+for row in df[mask_range].index:
+    ax.plot(x, df.iloc[row, 4:], label=df.iloc[row,0])
+ax.legend()
+ax.set_title("Largest Range Life Expectancy") 
+ax.set_xlabel("Year")
+ax.set_ylabel("Life Expectancy")
+plt.xticks(rotation=90)
+
+plt.style.use('ggplot')
 plt.show()
+
+
+
+
+
