@@ -21,6 +21,7 @@ standard deviation
 highest mean
 lowest mean
 greatest range
+We believed that these metrics would show us what factors are the most important for changing life expectancy in a country.  
 Cambodia - The data showed us an anomaly 
 Since there were so many indicators, we decided to reformat the data with key as country name, value as public health feature.
 We were also interested in looking at these countires by regions, and we notivced that some country names were grouped by region, or even economic brakcket.
