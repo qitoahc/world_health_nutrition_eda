@@ -34,5 +34,8 @@ The model we chose
 Some obervations:
 - There are countries whose data, either completely or for paticular years, as an aggregate of a geographic region or particular designation i.e. 'Arab Countries' and 'IDA & IBRD countries'.
 
-![alt text](https://raw.githubusercontent.com/qitoahc/world_health_nutrition_eda/main/images/Highest_mean.png)
 ![alt text](https://github.com/qitoahc/world_health_nutrition_eda/blob/main/images/All_countries.png)
+![alt text](https://raw.githubusercontent.com/qitoahc/world_health_nutrition_eda/main/images/Highest_mean.png)
+![alt text](https://github.com/qitoahc/world_health_nutrition_eda/blob/main/images/Highest_stdev.png)
+![alt text](https://github.com/qitoahc/world_health_nutrition_eda/blob/main/images/Largest_range.png)
+![alt text](https://github.com/qitoahc/world_health_nutrition_eda/blob/main/images/Lowest_mean.png)
