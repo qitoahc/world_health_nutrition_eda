@@ -1,20 +1,20 @@
 # DISTILLING WORLD HEALTH TRENDS
 ![alt text](https://case.edu/medicine/globalhealth/sites/case.edu.cghd/files/styles/hero_one_column/public/2019-02/app-world-map.jpg?h=dabe408c&itok=xVpTbRrf)
 ## Goal:
-Our goal was to explore data on life expectancy collected over a series of years, from over 250 countries, and compare and contrast that data by each country's respective public health indicators of which each country shared 345 features such as  by gender and age.
+Our goal was to explore data on life expectancy collected over a series of years, from over 250 country and geographical regions.  Ultimately we sought to compare and contrast that data for selected countries against by each country's respective public health and popultation statistics (there were over 300 of these features included, with three below as an example).
 ```bash
 'Adults (ages 15+) living with HIV'
 'Age at first marriage, female'
 'Wanted fertility rate (births per woman)'
 ```
 ## The Problem
-Our problem was to devise an appropriate approach to viewing our data. We were interested in understanding how life life expectancy varied across different countries and also throughout the years present.  Our initial approach involved identifying countries that had the greatest standard deviation, highest mean, lowest mean, and greatest range over the time span.  We wanted to know what kinds of other factors led to or correlated with the life expectancies for those countries.
+Our problem was to devise an appropriate approach to viewing and analyzing our data. We were interested in understanding how life life expectancy varied across different countries and also throughout the years present.  Our initial approach involved identifying countries that had the greatest standard deviation, highest mean, lowest mean, and greatest range over the time span.  We wanted to know what kinds of other factors led to or correlated with the life expectancies for those countries.
 
 ## Data
 Upon initial inspection of the raw data we ascertained that the data fell intersected along three distinct domains:
 * Chronological: Spanning the years 1960 through 2015
-* Geographical: Incorporating 258 countries that have existed within the above.
-* Public Health Factors: Split into 345 subcategories of public health for _each_ country or geopolitical region.
+* Geographical: Incorporating 258 countries or geographical regions.
+* Public Health and Population Factors: Split into 345 subcategories for _each_ country or geopolitical region.
 ## Analysis
 Although we were initially tempted to clean the data and run it through a pd.corr() method or muliplot we decided instead to continue to explore the data by comparing countries and finding significant inidicators.  The indicators we chose were:
 standard deviation 
